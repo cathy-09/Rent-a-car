@@ -12,7 +12,7 @@ namespace Rent_a_car
 
             // Add services to the container.
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
-            builder.Services.AddDbContext<ApplicationDbContext>(options =>
+            builder.Services.AddDbContext<RentACarDbContext>(options =>
                 options.UseSqlServer(connectionString));
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
@@ -25,7 +25,7 @@ namespace Rent_a_car
                 options.Password.RequireDigit = false;
             }
             )
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+                .AddEntityFrameworkStores<RentACarDbContext>();
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
