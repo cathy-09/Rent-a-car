@@ -17,6 +17,8 @@ namespace Rent_a_car.Data.Models
         [Range(0, 2000)]
         [Column(TypeName = "decimal(18,2)")]
         public decimal Price { get; set; }
+        [Url]
         public string Image { get; set; }
+        public IEnumerable<Rent> Rents { get; init; } = new List<Rent>();
     }
 }

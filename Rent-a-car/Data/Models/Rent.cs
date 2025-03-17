@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Rent_a_car.Data.Models
 {
@@ -13,8 +14,9 @@ namespace Rent_a_car.Data.Models
         public int CarId { get; set; }
         public Car? Car { get; set; }
         [Required]
-        public int CusromerId { get; set; }
+        public int CustomerId { get; set; }
         public Customer? Customer { get; set; }
+        [Column(TypeName = "decimal(18,2)")]
         public decimal Total { get; set; }
         public string Status { get; set; }
     }
